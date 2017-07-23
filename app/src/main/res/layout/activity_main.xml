@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.testgame.MainActivity"
+
+    >
+
+    <TextView
+        android:id="@+id/textViewInfo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Выберите класс героя"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/vampireButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вампир"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/golemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Голем"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/reptilianButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рептилоид"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/textViewInfo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Базовые характеристики"
+        android:textSize="30dp"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Вампир
+                        \nHP: 80
+                        \nDMG: 7
+                        \nAbility: после каждого удара забирает 2HP жерты"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Голем
+                        \nHP: 140
+                        \nDMG: 13
+                        \nAbility: 30% при ударе вывести противника из боя на 4с"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Репилоид
+                        \nHP: 105
+                        \nDMG: 8
+                        \nAbility: 20% заставить противника ударить самого себя "
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
