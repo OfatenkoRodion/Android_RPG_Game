@@ -8,7 +8,7 @@ public abstract class Character extends  Adam implements Parcelable {
     int Current_experience;
     int Next_lvl_experience;
 
-    protected void Lvl_up(){};
+    abstract void Lvl_up();
     public void Get_exp(int exp){
         Current_experience+=exp;
 

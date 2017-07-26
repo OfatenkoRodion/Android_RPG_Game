@@ -2,6 +2,8 @@ package com.example.testgame;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Random;
+
 public class CharacterGolem extends Character {
 
     public CharacterGolem(){
@@ -24,7 +26,11 @@ public class CharacterGolem extends Character {
     }
     @Override
     public void  giveDmg(Adam adam){
-        adam.takeDmg(this,DMG);
+        Random r = new Random(System.currentTimeMillis());
+        if(r.nextInt(10)==1){
+            adam.takeDmg(this,DMG*3);
+        } else
+            adam.takeDmg(this,DMG);
     }
     @Override
     public void takeDmg(Adam adam,int dmg){

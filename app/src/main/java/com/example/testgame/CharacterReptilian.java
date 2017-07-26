@@ -1,6 +1,7 @@
 package com.example.testgame;
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.Random;
 
 public class CharacterReptilian extends Character {
 
@@ -29,6 +30,10 @@ public class CharacterReptilian extends Character {
     }
     @Override
     public void takeDmg(Adam adam,int dmg){
+        Random r = new Random(System.currentTimeMillis());
+        if(r.nextInt(10)<=3){
+            adam.takeDmg(this,DMG);
+        } else
         HP=HP-dmg;
     }
     @Override

@@ -26,6 +26,11 @@ public class CharacterVampire extends Character {
     @Override
     public void  giveDmg(Adam adam){
         adam.takeDmg(this,DMG);
+        vampirism(adam);
+    }
+    private void vampirism (Adam adam){
+        adam.takeDmg(this,2);
+        HP=HP+2;
     }
     @Override
     public void takeDmg(Adam adam,int dmg){

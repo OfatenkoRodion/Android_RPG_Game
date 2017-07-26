@@ -83,7 +83,7 @@
             android:text="Голем
                         \nHP: 140
                         \nDMG: 13
-                        \nAbility: 30% при ударе вывести противника из боя на 4с"
+                        \nAbility: 10% нанести трехкратный урон"
             android:gravity="center"
             android:textSize="35sp"
             android:background="@color/Seashell"
