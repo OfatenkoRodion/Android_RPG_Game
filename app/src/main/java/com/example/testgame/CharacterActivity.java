@@ -1,6 +1,7 @@
 package com.example.testgame;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,8 +45,8 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
     public void  onClick(View view){
 
        if(view.getId()==R.id.buttonGiveExp){
-           player.Get_exp(50);
-           ViewCharacterInfo();
+           Intent intent = new Intent(CharacterActivity.this, FightActivity.class);
+           startActivity(intent);
        }
         if(view.getId()==R.id.buttonFightWolf){
 
