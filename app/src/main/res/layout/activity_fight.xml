@@ -3,15 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="30sp"
-        android:layout_height="match_parent"
-        android:indeterminateDrawable="@drawable/verticalprogressbar"
-        android:max="100"
-        android:progress="0"
 
-        />
 
     <Button
         android:id="@+id/button"
