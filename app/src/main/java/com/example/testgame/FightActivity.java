@@ -21,17 +21,16 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
        pb=(ProgressBar)findViewById(R.id.progressBar);
         bt=(Button)findViewById(R.id.button);
-
+        bt.setOnClickListener(this);
     }
-
     @Override
     public void  onClick(View view){
         if (view.getId()==R.id.button){
             pb.setProgress(progress);
-            pb.setIndeterminate(false);
             progress+=10;
+            if(progress>100){
+                progress=0;
+            }
           }
-
-
     }
 }
