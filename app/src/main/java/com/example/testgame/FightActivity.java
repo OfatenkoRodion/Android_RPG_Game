@@ -10,23 +10,28 @@ import android.widget.ProgressBar;
 
 
 public class FightActivity extends AppCompatActivity implements View.OnClickListener{
-    Button bt;
 
-   ProgressBar pb;
+   Button bt;
+   ProgressBar progressBarYou;
+    ProgressBar progressBarOponent;
    int progress=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-       pb=(ProgressBar)findViewById(R.id.progressBar);
+        progressBarYou=(ProgressBar)findViewById(R.id.progressBarCharHP);
+        progressBarOponent=(ProgressBar)findViewById(R.id.progressBarOponenHP);
+
+
         bt=(Button)findViewById(R.id.button);
         bt.setOnClickListener(this);
+
     }
     @Override
     public void  onClick(View view){
         if (view.getId()==R.id.button){
-            pb.setProgress(progress);
+            progressBarYou.setProgress(progress);
             progress+=10;
             if(progress>100){
                 progress=0;

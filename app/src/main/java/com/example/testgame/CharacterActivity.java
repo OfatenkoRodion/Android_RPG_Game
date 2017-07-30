@@ -30,7 +30,6 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
 
         wolf = new NPC_wolf();
 
-
         buttonGiveExp=(Button)findViewById(R.id.buttonGiveExp);
         status=(Button)findViewById(R.id.buttonStats);
         fWolf=(Button)findViewById(R.id.buttonFightWolf);
