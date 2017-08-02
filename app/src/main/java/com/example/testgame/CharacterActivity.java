@@ -44,7 +44,10 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
     public void  onClick(View view){
 
        if(view.getId()==R.id.buttonGiveExp){
+
            Intent intent = new Intent(CharacterActivity.this, FightActivity.class);
+           intent.putExtra( Character.class.getCanonicalName(), player);
+           intent.putExtra( NPC.class.getCanonicalName(), wolf);
            startActivity(intent);
        }
         if(view.getId()==R.id.buttonFightWolf){

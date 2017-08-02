@@ -35,6 +35,15 @@
             android:max="100"
             android:progress="50"
             android:progressDrawable="@drawable/character_hp_progressbar" />
+
+        <Button
+            android:id="@+id/buttonSt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="248dp"
+            android:text="Показать статы" />
     </RelativeLayout>
 
 </LinearLayout>
