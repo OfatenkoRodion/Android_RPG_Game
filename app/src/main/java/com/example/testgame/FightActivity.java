@@ -74,7 +74,6 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                 } while (player.isDead()==false && oponent.isDead()==false);
             }
         });
-
         BattleRound br = new BattleRound(player,oponent);
     }
 
