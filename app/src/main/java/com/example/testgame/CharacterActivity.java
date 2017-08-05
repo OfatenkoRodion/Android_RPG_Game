@@ -26,36 +26,13 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      ///  setContentView(R.layout.activity_character);
+      setContentView(R.layout.activity_character);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        LayoutInflater inflater = LayoutInflater.from(this);
-        List<View> pages = new ArrayList<View>();
-
-        View page = inflater.inflate(R.layout.page,null);
-        TextView textView = (TextView) page.findViewById(R.id.text_view);
-        textView.setText("Страница 1");
-        pages.add(page);
-
-        page = inflater.inflate(R.layout.activity_character, null);
-
-        pages.add(page);
-
-        page = inflater.inflate(R.layout.activity_fight, null);
-
-        pages.add(page);
-
-        SamplePagerAdapter pagerAdapter = new SamplePagerAdapter(pages);
-        ViewPager viewPager = new ViewPager(this);
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(1);
-
-        setContentView(viewPager);
 
        player = ( Character) getIntent().getParcelableExtra(
                Character.class.getCanonicalName());
 
-     /*   wolf = new NPC_wolf();
+        wolf = new NPC_wolf();
 
         buttonGiveExp=(Button)findViewById(R.id.buttonGiveExp);
         status=(Button)findViewById(R.id.buttonStats);
@@ -65,7 +42,7 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
         status.setOnClickListener(this);
         fWolf.setOnClickListener(this);
         buttonGiveExp.setOnClickListener(this);
-        ViewCharacterInfo();*/
+        ViewCharacterInfo();
     }
     @Override
     public void  onClick(View view){
@@ -79,18 +56,11 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
        }
         if(view.getId()==R.id.buttonFightWolf){
 
-            wolf  = new NPC_wolf();
-            BattleRound br = new BattleRound(player,wolf);
-
-            CharSequence text = "Бой окончен";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-            toast.show();
+            Intent intent = new Intent(CharacterActivity.this,MainActivity2.class);
+            startActivity(intent);
         }
         if(view.getId()==R.id.buttonStats){
             ViewCharacterInfo();
-
         }
     }
     private void ViewCharacterInfo(){
