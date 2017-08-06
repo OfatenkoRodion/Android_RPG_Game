@@ -17,9 +17,7 @@ import android.view.LayoutInflater;
 public class CharacterActivity extends AppCompatActivity implements View.OnClickListener {
 
     Character player;
-    Button buttonGiveExp;
-    Button fWolf;
-    Button status;
+    Button buttonStartFight;
     NPC_wolf wolf;
     TextView tv;
 
@@ -34,14 +32,10 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
 
         wolf = new NPC_wolf();
 
-        buttonGiveExp=(Button)findViewById(R.id.buttonGiveExp);
-        status=(Button)findViewById(R.id.buttonStats);
-        fWolf=(Button)findViewById(R.id.buttonFightWolf);
-        tv=(TextView)findViewById(R.id.textViewCharacterInfo);
+        buttonStartFight=(Button)findViewById(R.id.buttonStartFight);
 
-        status.setOnClickListener(this);
-        fWolf.setOnClickListener(this);
-        buttonGiveExp.setOnClickListener(this);
+        tv=(TextView)findViewById(R.id.textViewCharacterInfo);
+        buttonStartFight.setOnClickListener(this);
         ViewCharacterInfo();
     }
     @Override
@@ -54,14 +48,6 @@ public class CharacterActivity extends AppCompatActivity implements View.OnClick
            intent.putExtra( NPC.class.getCanonicalName(), wolf);
            startActivity(intent);
        }
-        if(view.getId()==R.id.buttonFightWolf){
-
-            Intent intent = new Intent(CharacterActivity.this,MainActivity2.class);
-            startActivity(intent);
-        }
-        if(view.getId()==R.id.buttonStats){
-            ViewCharacterInfo();
-        }
     }
     private void ViewCharacterInfo(){
 

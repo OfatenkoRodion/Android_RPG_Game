@@ -18,31 +18,12 @@
         />
 
     <Button
-        android:id="@+id/buttonGiveExp"
+        android:id="@+id/buttonStartFight"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_gravity="center"
         android:text="+50 опыта"
-        android:textSize="50sp"
-        />
-
-    <Button
-        android:id="@+id/buttonFightWolf"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="FightWolf"
-        android:textSize="50sp"
-        />
-    <Button
-        android:id="@+id/buttonStats"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="Показать статы"
         android:textSize="50sp"
         />
 

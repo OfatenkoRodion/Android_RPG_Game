@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button openVampire;
     Button openGolem;
     Button openReptilian;
-
+    Button test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         openReptilian=(Button)findViewById(R.id.reptilianButton);
         openReptilian.setOnClickListener(this);
+
+        test=(Button)findViewById(R.id.testButton);
+        test.setOnClickListener(this);
     }
 
     @Override
@@ -47,5 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Character player = new CharacterReptilian();
             intent.putExtra( Character.class.getCanonicalName(), player);
             startActivity(intent);}
+
+        if(view.getId()==R.id.testButton){
+            Intent intent2 = new Intent(MainActivity.this, ActivitySwitchHomeSpawn.class);
+            Character player = new CharacterVampire();
+            intent2.putExtra( Character.class.getCanonicalName(), player);
+            startActivity(intent2);}
     }
 }
