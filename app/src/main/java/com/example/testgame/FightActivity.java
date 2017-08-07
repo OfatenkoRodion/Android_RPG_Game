@@ -24,9 +24,9 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
 
     Handler h;
     Thread outputHP;
-
+    BattleRound br;
     final  int START_CODE=1;
-    int temp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,15 +72,20 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                         e.printStackTrace();
                     }
                 } while (player.isDead()==false && oponent.isDead()==false);
+
+               while (true){
+                    if (br.isFinish()==true){
+                Intent intent = new Intent();
+                intent.putExtra( Character.class.getCanonicalName(), player);
+                setResult(RESULT_OK, intent);
+                finish();}}
             }
         });
-        BattleRound br = new BattleRound(player,oponent);
     }
-
     @Override
     public void  onClick(View view){
         if (view.getId()==R.id.buttonSt){
-           BattleRound br = new BattleRound(player,oponent);
+           br = new BattleRound(player,oponent);
            outputHP.start();
            bt.setClickable(false);
           }

@@ -5,12 +5,18 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 
 public class BattleRound {
+    Beat hits_1;
     public BattleRound(Character player,NPC mob){
 
-        Beat hits_1= new Beat();
+         hits_1= new Beat();
 
         hits_1.execute(player,mob);
 
+    }
+    public boolean isFinish(){
+       if(hits_1.getStatus().toString()=="FINISHED"){
+        return  true;
+        } else return false;
     }
 
     public class Beat extends AsyncTask<Adam,Void,Void>{

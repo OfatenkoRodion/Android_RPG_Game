@@ -21,7 +21,7 @@
         <activity android:name=".CharacterActivity"></activity>
         <activity android:name=".FightActivity"></activity>
         <activity android:name=".Activity_Inf"></activity>
-        <activity android:name=".TwoActivity"></activity>
+        <activity android:name=".ActivitySpawner"></activity>
         <activity android:name=".ActivitySwitchHomeSpawn"></activity>
 
     </application>
