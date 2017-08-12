@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void  onClick(View view){
 
-        Intent intent = new Intent(MainActivity.this, CharacterActivity.class);
+        Intent intent = new Intent(MainActivity.this,ActivitySwitchHomeSpawn.class);
 
         if(view.getId()==R.id.vampireButton){
             Character player = new CharacterVampire();
@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra( Character.class.getCanonicalName(), player);
             startActivity(intent);}
 
-        if(view.getId()==R.id.testButton){
-            Intent intent2 = new Intent(MainActivity.this, ActivitySwitchHomeSpawn.class);
-            Character player = new CharacterVampire();
-            intent2.putExtra( Character.class.getCanonicalName(), player);
-            startActivity(intent2);}
+
     }
 }
