@@ -1,30 +1,31 @@
 package com.example.testgame;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.lang.*;
 
 public class RandomNPC {
-
     ArrayList<String> classes ;
     public RandomNPC(){
         classes = new ArrayList<String>();
-        classes.add(com.example.testgame.CharacterGolem.class.toString());
-        classes.add(com.example.testgame.CharacterVampire.class.toString());
-        classes.add(com.example.testgame.CharacterReptilian.class.toString());
+        classes.add(com.example.testgame.NPC_wolf.class.getName());
     }
-    public Character nextCharacter(){
-
+    public Class nextCharacter(){
         int classesCount=classes.size();
         Random r = new Random(System.currentTimeMillis());
 
-        String temp=classes.get( r.nextInt(classesCount));
+        int numberOfClass=r.nextInt(classesCount);
+        String nameOfClass= classes.get(numberOfClass);
 
-        String clsName = "Ex";  // use fully qualified name
-        Class cls = Class.forName(com.example.testgame.);
-        Object clsInstance = (Object) cls.newInstance();
+        try {
+        Class temp=  Class.forName(nameOfClass);
+            return temp;
+        }
+        catch (ClassNotFoundException e) {}
 
-        return  (classes.get( r.nextInt(classesCount)).).class;
+        return null;
     }
 
 }

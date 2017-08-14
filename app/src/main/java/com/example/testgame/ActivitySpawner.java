@@ -31,7 +31,6 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
                 Character.class.getCanonicalName());
         buttonStartFight=(Button)findViewById(R.id.buttonStartFight);
         buttonStartFight.setOnClickListener(this);
-
         ((TextView) findViewById(R.id.spawnerInfo)).setText(player.toString());
     }
     @Override
@@ -43,12 +42,19 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
     @Override
     public void  onClick(View view) {
 
-        if(view.getId()==R.id.buttonStartFight){
+       /* if(view.getId()==R.id.buttonStartFight){
             Intent intent = new Intent(ActivitySpawner.this, FightActivity.class);
             intent.putExtra( Character.class.getCanonicalName(), player);
             intent.putExtra( NPC.class.getCanonicalName(), new NPC_wolf());
-            startActivityForResult(intent, 1);}
+            startActivityForResult(intent, 1);}*/
 
+        try {
+            RandomNPC rNPC = new RandomNPC();
+            NPC builder = (NPC) rNPC.nextCharacter().newInstance();
+            ((TextView) findViewById(R.id.spawnerInfo)).setText(builder.toString());
+        } catch (Exception e){
+            ((TextView) findViewById(R.id.spawnerInfo)).setText(e.toString());
+        }
     }
 
 

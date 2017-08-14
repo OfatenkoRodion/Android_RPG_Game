@@ -27,10 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         openReptilian=(Button)findViewById(R.id.reptilianButton);
         openReptilian.setOnClickListener(this);
 
-        test=(Button)findViewById(R.id.testButton);
-        test.setOnClickListener(this);
     }
-
     @Override
     public void  onClick(View view){
 
