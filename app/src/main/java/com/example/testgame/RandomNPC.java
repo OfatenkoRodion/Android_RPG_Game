@@ -23,9 +23,7 @@ public class RandomNPC {
         Class temp=  Class.forName(nameOfClass);
             return temp;
         }
-        catch (ClassNotFoundException e) {}
-
-        return null;
+        catch (ClassNotFoundException e) { return null; }
     }
 
 }
