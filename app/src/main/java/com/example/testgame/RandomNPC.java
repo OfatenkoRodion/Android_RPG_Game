@@ -12,7 +12,7 @@ public class RandomNPC {
         classes = new ArrayList<String>();
         classes.add(com.example.testgame.NPC_wolf.class.getName());
     }
-    public Class nextCharacter(){
+    public Class nextNPC(){
         int classesCount=classes.size();
         Random r = new Random(System.currentTimeMillis());
 
