@@ -77,6 +77,7 @@ public class FightActivity extends AppCompatActivity implements View.OnClickList
                     if (br.isFinish()==true){
                 Intent intent = new Intent();
                 intent.putExtra( Character.class.getCanonicalName(), player);
+                intent.putExtra( NPC.class.getCanonicalName(), oponent);
                 setResult(RESULT_OK, intent);
                 finish();}}
             }

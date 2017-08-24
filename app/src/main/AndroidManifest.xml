@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CharacterActivity"></activity>
+        <activity android:name=".ActivityCharacter"></activity>
         <activity android:name=".FightActivity"></activity>
         <activity android:name=".Activity_Inf"></activity>
         <activity android:name=".ActivitySpawner"></activity>
