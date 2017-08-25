@@ -74,7 +74,6 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
     private void refreshListView(){
         mobs.clear();
         mobs.addAll(S_Sys.getStringListMobs());
-        
         //adapter.notifyDataSetChanged(); не может найти метод,надо понять почему :C
         adapter = new ArrayAdapter<String>(
                 this,
@@ -103,6 +102,7 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
                 NPC.class.getCanonicalName());
         S_Sys.unblockMob( (NPC) data.getParcelableExtra(
                 NPC.class.getCanonicalName()));
+
     }
 
 }
