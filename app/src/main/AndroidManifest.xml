@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="Добро пожаловать назад">
+            android:name=".Start_screen"
+            android:label="Погнали">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityCharacter"></activity>
-        <activity android:name=".FightActivity"></activity>
-        <activity android:name=".Activity_Inf"></activity>
-        <activity android:name=".ActivitySpawner"></activity>
-        <activity android:name=".ActivitySwitchHomeSpawn"></activity>
+        <activity android:name=".ActivityChooseHero"/>
+        <activity android:name=".FightActivity" />
+        <activity android:name=".Activity_Inf" />
+        <activity android:name=".ActivitySpawner" />
+        <activity android:name=".ActivitySwitchHomeSpawn" />
 
     </application>
 

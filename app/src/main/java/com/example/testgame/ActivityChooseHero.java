@@ -7,7 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class ActivityChooseHero extends AppCompatActivity implements View.OnClickListener{
     Button openVampire;
     Button openGolem;
     Button openReptilian;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void  onClick(View view){
 
-        Intent intent = new Intent(MainActivity.this,ActivitySwitchHomeSpawn.class);
+        Intent intent = new Intent(ActivityChooseHero.this,ActivitySwitchHomeSpawn.class);
 
         if(view.getId()==R.id.vampireButton){
             Character player = new CharacterVampire();

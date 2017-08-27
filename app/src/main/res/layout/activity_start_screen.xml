@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.testgame.Start_screen">
+
+    <Button
+        android:id="@+id/buttonNewGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Новая игра" />
+
+    <Button
+        android:id="@+id/buttonLoadGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Продолжить" />
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выход" />
+
+    <TextView
+        android:id="@+id/textViewHelloInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2017 by Rodion Ofatenko"
+        android:gravity="center"
+        />
+</LinearLayout>

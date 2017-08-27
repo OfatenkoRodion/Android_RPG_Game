@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.testgame.MainActivity"
-
-    >
+    tools:context="com.example.testgame.ActivityChooseHero">
 
     <TextView
         android:id="@+id/textViewInfo1"
@@ -19,7 +17,6 @@
         android:textSize="50sp"
         android:background="@color/SandyBrown"
         />
-
     <Button
         android:id="@+id/vampireButton"
         android:layout_width="wrap_content"
@@ -93,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Репилоид
+            android:text="Рептилоид
                         \nHP: 105
                         \nDMG: 8
                         \nAbility: 20% заставить противника ударить самого себя "
