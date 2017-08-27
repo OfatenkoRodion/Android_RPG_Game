@@ -1,12 +1,13 @@
 package com.example.testgame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Activity_Inf extends Activity implements View.OnClickListener {
+public class Activity_Inf extends Activity  {
 
     Character player;
 
@@ -22,5 +23,12 @@ public class Activity_Inf extends Activity implements View.OnClickListener {
         info.setText(player.toString());
     }
     @Override
-    public void  onClick(View view){}
+    protected void onRestart() {
+        super.onRestart();
+       // info.setText("я вернулся");
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        info.setText("onActivityResult");
+    }
 }

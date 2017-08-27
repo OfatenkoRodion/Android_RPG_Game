@@ -3,7 +3,6 @@ package com.example.testgame;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.CountDownTimer;
-
 public class SpawnerSystem {
 
     static int MAX_MOBS_COUNT=6;
@@ -61,11 +60,12 @@ public class SpawnerSystem {
     }
     private boolean add_mobs(){
         try {
-            RandomNPC rNPC = new RandomNPC();
 
+            RandomNPC rNPC = new RandomNPC();
             for (int i=0;i<MAX_MOBS_COUNT;i++){
             NPC newNPC = (NPC) rNPC.nextNPC().newInstance();
-            available_mobs.add(newNPC);}
+            available_mobs.add(newNPC);
+            }
 
             return  true;
             }

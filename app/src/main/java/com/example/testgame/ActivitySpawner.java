@@ -15,9 +15,8 @@ import android.widget.AdapterView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivitySpawner extends Activity implements View.OnClickListener
+public class ActivitySpawner extends Activity
 {
-    Button buttonStartFight;
     Character player;
     ListView mobslistView;
     SpawnerSystem S_Sys;
@@ -31,8 +30,6 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         player = ( Character) getIntent().getParcelableExtra(
                 Character.class.getCanonicalName());
-        buttonStartFight=(Button)findViewById(R.id.buttonStartFight);
-        buttonStartFight.setOnClickListener(this);
         mobslistView = (ListView)findViewById(R.id.listView);
         ((TextView) findViewById(R.id.spawnerInfo)).setText(player.toString());
 
@@ -44,9 +41,7 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
         adapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1, mobs);
-
         mobslistView.setAdapter(adapter);
-
         mobslistView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
@@ -60,8 +55,6 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
                     intent.putExtra( NPC.class.getCanonicalName(), oponent);
                     startActivityForResult(intent, 1);
                 }
-
-
             }
         });
     }
@@ -78,20 +71,7 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
         adapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1, mobs);
-
         mobslistView.setAdapter(adapter);
-
-    }
-
-    @Override
-    public void  onClick(View view) {
-
-       /* if(view.getId()==R.id.buttonStartFight){
-            Intent intent = new Intent(ActivitySpawner.this, FightActivity.class);
-            intent.putExtra( Character.class.getCanonicalName(), player);
-            intent.putExtra( NPC.class.getCanonicalName(), new NPC_wolf());
-            startActivityForResult(intent, 1);}
-*/
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -102,7 +82,6 @@ public class ActivitySpawner extends Activity implements View.OnClickListener
                 NPC.class.getCanonicalName());
         S_Sys.unblockMob( (NPC) data.getParcelableExtra(
                 NPC.class.getCanonicalName()));
-
     }
 
 }
