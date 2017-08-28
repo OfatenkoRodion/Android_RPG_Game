@@ -12,7 +12,7 @@ public abstract class Character extends  Adam implements Parcelable {
     public void Get_exp(int exp){
         Current_experience+=exp;
 
-        if (Current_experience>=Next_lvl_experience)
+        while (Current_experience>=Next_lvl_experience)
             Lvl_up();
     }
     @Override

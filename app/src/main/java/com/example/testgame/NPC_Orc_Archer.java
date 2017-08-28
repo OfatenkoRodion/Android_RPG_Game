@@ -20,14 +20,9 @@ public class NPC_Orc_Archer  extends NPC{
         ExperienceCost = Integer.parseInt(data[3]);
     }
     @Override
-    public void  giveDmg(Adam adam){
-        adam.takeDmg(this,DMG);
+    public String toString(){
+        return new StringBuilder().append("Orc_Archer").append(super.toString()).toString();
     }
-    @Override
-    public void takeDmg(Adam adam,int dmg){
-        HP=HP-dmg;
-    }
-
     public static final Parcelable.Creator<NPC> CREATOR = new Parcelable.Creator<NPC>() {
 
         @Override

@@ -19,12 +19,8 @@ public class NPC_wolf extends NPC{
         ExperienceCost = Integer.parseInt(data[3]);
     }
     @Override
-    public void  giveDmg(Adam adam){
-        adam.takeDmg(this,DMG);
-    }
-    @Override
-    public void takeDmg(Adam adam,int dmg){
-        HP=HP-dmg;
+    public String toString(){
+        return new StringBuilder().append("Wolf").append(super.toString()).toString();
     }
 
     public static final Parcelable.Creator<NPC> CREATOR = new Parcelable.Creator<NPC>() {

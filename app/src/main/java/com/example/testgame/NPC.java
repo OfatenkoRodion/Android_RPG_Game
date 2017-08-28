@@ -7,9 +7,16 @@ public abstract class NPC  extends Adam implements Parcelable {
     int ExperienceCost;
     @Override
     public String toString(){
-        return new StringBuilder().append("\nHP: ").append(HP).toString();
+        return new StringBuilder().append("HP: ").append(HP).toString();
     }
-
+    @Override
+    public void  giveDmg(Adam adam){
+        adam.takeDmg(this,DMG);
+    }
+    @Override
+    public void takeDmg(Adam adam,int dmg){
+        HP=HP-dmg;
+    }
     @Override
     public int describeContents() {
         return 0;
