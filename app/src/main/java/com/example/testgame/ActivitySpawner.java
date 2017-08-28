@@ -6,14 +6,15 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView;
-import java.util.ArrayList;
+
 import java.util.List;
+import android.content.SharedPreferences.Editor;
+import android.content.SharedPreferences;
 
 public class ActivitySpawner extends Activity
 {
@@ -24,6 +25,9 @@ public class ActivitySpawner extends Activity
     List<String> mobs;
     ListAdapter adapter;
 
+    SharedPreferences sPref;
+   public static final String SAVED_HERO_EXP = "hero_exp";
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spawner);
@@ -31,9 +35,12 @@ public class ActivitySpawner extends Activity
         player = ( Character) getIntent().getParcelableExtra(
                 Character.class.getCanonicalName());
         mobslistView = (ListView)findViewById(R.id.listView);
-        ((TextView) findViewById(R.id.spawnerInfo)).setText(player.toString());
 
         initSpawnersystem();
+       // loadText();
+
+        ((TextView) findViewById(R.id.spawnerInfo)).setText(player.toString());
+
     }
     private void initSpawnersystem(){
         S_Sys = new  SpawnerSystem();
@@ -82,6 +89,30 @@ public class ActivitySpawner extends Activity
                 NPC.class.getCanonicalName());
         S_Sys.unblockMob( (NPC) data.getParcelableExtra(
                 NPC.class.getCanonicalName()));
+        saveText();
     }
 
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        saveText();
+    }
+    void saveText() {
+        sPref = getPreferences(MODE_PRIVATE);
+        Editor ed = sPref.edit();
+        ed.putString(SAVED_HERO_EXP,String.valueOf(player.getCurrent_experience()));
+        ed.commit();
+        Toast.makeText(this,"Прогресс сохранен", Toast.LENGTH_SHORT).show();
+    }
+    void loadText() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_HERO_EXP,"");
+        if (savedText==null || savedText=="" ){
+            Toast.makeText(this, "пусто", Toast.LENGTH_SHORT).show();
+        } else
+            {
+        Toast.makeText(this, savedText, Toast.LENGTH_SHORT).show();
+            player.add_exp(Integer.valueOf(savedText));
+        }
+    }
 }

@@ -50,12 +50,12 @@ public class BattleRound {
             if(attacking instanceof Character){
                 attacking.HP=startHp;
                 if (defensible.isDead()==true){
-                ((Character)attacking).Get_exp(((NPC)defensible).ExperienceCost);}
+                ((Character)attacking).add_exp(((NPC)defensible).ExperienceCost);}
             }
             if(defensible instanceof Character){
                 defensible.HP=startHp;
                 if (attacking.isDead()==true){
-                ((Character)defensible).Get_exp(((NPC)attacking).ExperienceCost);}
+                ((Character)defensible).add_exp(((NPC)attacking).ExperienceCost);}
             }
 
 

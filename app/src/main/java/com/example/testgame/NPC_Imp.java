@@ -20,7 +20,7 @@ public class NPC_Imp  extends NPC{
     }
     @Override
     public String toString(){
-        return new StringBuilder().append("Imp").append(super.toString()).toString();
+        return new StringBuilder().append("Imp ").append(super.toString()).toString();
     }
 
     public static final Parcelable.Creator<NPC> CREATOR = new Parcelable.Creator<NPC>() {

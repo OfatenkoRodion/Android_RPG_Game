@@ -21,7 +21,7 @@ public class NPC_Orc_Archer  extends NPC{
     }
     @Override
     public String toString(){
-        return new StringBuilder().append("Orc_Archer").append(super.toString()).toString();
+        return new StringBuilder().append("Orc_Archer ").append(super.toString()).toString();
     }
     public static final Parcelable.Creator<NPC> CREATOR = new Parcelable.Creator<NPC>() {
 

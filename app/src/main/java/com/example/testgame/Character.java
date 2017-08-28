@@ -9,7 +9,7 @@ public abstract class Character extends  Adam implements Parcelable {
     int Next_lvl_experience;
 
     abstract void Lvl_up();
-    public void Get_exp(int exp){
+    public void add_exp(int exp){
         Current_experience+=exp;
 
         while (Current_experience>=Next_lvl_experience)
@@ -28,5 +28,8 @@ public abstract class Character extends  Adam implements Parcelable {
         return new StringBuilder().append("LVL: ").append(LVL).append("\nHP: ").append(HP).append("\nDMG: ").append(DMG).append("\nОпыт: ").append(Current_experience).append("/").append(Next_lvl_experience).toString();
     }
 
+    public int  getCurrent_experience(){
+        return Current_experience;
+    }
 
 }
