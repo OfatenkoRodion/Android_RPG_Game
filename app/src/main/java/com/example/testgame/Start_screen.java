@@ -35,18 +35,29 @@ public class Start_screen extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(Start_screen.this,ActivityChooseHero.class));
         } else
         if(view==loadGame){
+            String expCount=HeroPreferences.getDefaults("exp",getApplicationContext());
 
-            Intent intent = new Intent(Start_screen.this,ActivitySwitchHomeSpawn.class);
-            SharedPreferences sPref = getPreferences(MODE_PRIVATE);
-            String savedText = sPref.getString(ActivitySpawner.SAVED_HERO_EXP,"");
-            Toast.makeText(this,savedText, Toast.LENGTH_SHORT).show();
-          /*  if (savedText!=null || savedText!="" ){
-                Character player = new CharacterVampire();
-                player.add_exp(Integer.valueOf(savedText));
-                startActivity(intent);
-            } else
-                Toast.makeText(this,"Персонажей не найденно", Toast.LENGTH_SHORT).show();*/
+            if (expCount!=null || expCount!="" ){
+                String heroType=HeroPreferences.getDefaults("type",getApplicationContext());
+                try{
+                    Class temp= Class.forName(heroType);
+                   Character player  = (Character) temp.newInstance();
+                    player.add_exp(Integer.valueOf(expCount));
 
+                    Intent intent = new Intent(Start_screen.this,ActivitySwitchHomeSpawn.class);
+
+                    intent.putExtra( Character.class.getCanonicalName(), player);
+                    startActivity(intent);
+                }
+                catch (ClassNotFoundException e) {
+                    Toast.makeText(this,"не найден класс, который хотим получить как \"класс\" героя", Toast.LENGTH_SHORT).show();
+                    // не найден класс, который хотим получить как "класс" героя
+                }
+                catch (Exception e) {
+                    Toast.makeText(this,"не вышло создать объект полученного \"класса\"", Toast.LENGTH_SHORT).show();
+                    // не вышло создать объект полученного "класса"
+                }
+            } else  Toast.makeText(this,"Предидущих игр не найденно!", Toast.LENGTH_SHORT).show();
         } else
         if(view==exitGame){
             System.exit(0);

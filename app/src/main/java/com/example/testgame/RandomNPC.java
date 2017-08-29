@@ -27,4 +27,12 @@ public class RandomNPC {
         }
         catch (ClassNotFoundException e) { return null; }
     }
+    public String nextNPC2(){
+        int classesCount=classes.size();
+        //Random r = new Random(System.currentTimeMillis()); Marking for future: WHY this work wrong in cycle?
+        //int numberOfClass=r.nextInt(classesCount);         currentTimeMillis() not enough changed?
+        int numberOfClass=(int) (Math.random() * classesCount);
+        String nameOfClass= classes.get(numberOfClass);
+        return  nameOfClass;
+    }
 }
