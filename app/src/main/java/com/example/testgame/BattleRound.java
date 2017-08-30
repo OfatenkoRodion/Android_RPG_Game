@@ -11,7 +11,6 @@ public class BattleRound {
          hits_1= new Beat();
 
         hits_1.execute(player,mob);
-
     }
     public boolean isFinish(){
        if(hits_1.getStatus().toString()=="FINISHED"){
@@ -57,12 +56,6 @@ public class BattleRound {
                 if (attacking.isDead()==true){
                 ((Character)defensible).add_exp(((NPC)attacking).ExperienceCost);}
             }
-
-
         }
-
     }
-
-
-
 }

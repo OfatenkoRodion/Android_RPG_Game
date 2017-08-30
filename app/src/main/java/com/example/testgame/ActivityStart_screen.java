@@ -1,16 +1,14 @@
 package com.example.testgame;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.app.Activity;
 
-public class Start_screen extends Activity implements View.OnClickListener {
+public class ActivityStart_screen extends Activity implements View.OnClickListener {
 
     Button newGame;
     Button loadGame;
@@ -33,7 +31,7 @@ public class Start_screen extends Activity implements View.OnClickListener {
     public void  onClick(View view){
 
         if(view==newGame){
-            startActivity(new Intent(Start_screen.this,ActivityChooseHero.class));
+            startActivity(new Intent(ActivityStart_screen.this,ActivityChooseHero.class));
         } else
         if(view==loadGame){
             String expCount=HeroPreferences.getDefaults("exp",getApplicationContext());
@@ -45,7 +43,7 @@ public class Start_screen extends Activity implements View.OnClickListener {
                    Character player  = (Character) temp.newInstance();
                     player.add_exp(Integer.valueOf(expCount));
 
-                    Intent intent = new Intent(Start_screen.this,ActivitySwitchHomeSpawn.class);
+                    Intent intent = new Intent(ActivityStart_screen.this,ActivitySwitchHomeSpawn.class);
 
                     intent.putExtra( Character.class.getCanonicalName(), player);
                     startActivity(intent);

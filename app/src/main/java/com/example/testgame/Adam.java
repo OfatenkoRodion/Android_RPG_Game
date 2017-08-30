@@ -14,5 +14,4 @@ public abstract class Adam {
 
     abstract void takeDmg(Adam adam,int dmg);
 
-
 }

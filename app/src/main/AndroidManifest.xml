@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Start_screen"
-            android:label="Погнали">
+            android:name=".ActivityStart_screen"
+            android:label="Android_RPG_Game v1.0">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityChooseHero"/>
-        <activity android:name=".FightActivity" />
-        <activity android:name=".Activity_Inf" />
+        <activity android:name=".ActivityFight" />
+        <activity android:name=".Activity_Home" />
         <activity android:name=".ActivitySpawner" />
         <activity android:name=".ActivitySwitchHomeSpawn" />
 

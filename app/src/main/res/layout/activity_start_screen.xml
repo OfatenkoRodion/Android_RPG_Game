@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/Seashell"
-    tools:context="com.example.testgame.Start_screen">
+    tools:context="com.example.testgame.ActivityStart_screen">
 
     <Button
         android:id="@+id/buttonNewGame"

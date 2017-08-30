@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import android.widget.ListView;
 import android.widget.AdapterView;
 
 import java.util.List;
-import android.content.SharedPreferences.Editor;
+
 import android.content.SharedPreferences;
 
 public class ActivitySpawner extends Activity
@@ -38,8 +39,7 @@ public class ActivitySpawner extends Activity
         initSpawnersystem();
         ((TextView) findViewById(R.id.spawnerInfo)).setText(player.toString());
         HeroPreferences.setDefaults("type",(player.getClass()).getName().toString(),getApplicationContext());
-
-
+        startTimerforRefreshListView();
     }
     private void initSpawnersystem(){
         S_Sys = new  SpawnerSystem();
@@ -53,7 +53,7 @@ public class ActivitySpawner extends Activity
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 
                 if ((oponent = S_Sys.getOponenthMob(position))!=null){
-                    Intent intent = new Intent(ActivitySpawner.this, FightActivity.class);
+                    Intent intent = new Intent(ActivitySpawner.this, ActivityFight.class);
                     intent.putExtra( Character.class.getCanonicalName(), player);
                     intent.putExtra( NPC.class.getCanonicalName(), oponent);
                     startActivityForResult(intent, 1);
@@ -88,8 +88,13 @@ public class ActivitySpawner extends Activity
         HeroPreferences.setDefaults("exp",String.valueOf(player.getCurrent_experience()),getApplicationContext());
         Toast.makeText(this,"Сохранено", Toast.LENGTH_SHORT).show();
     }
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
+    private void startTimerforRefreshListView(){
+        new CountDownTimer(5000, 1000) {
+            public void onTick(long millisUntilFinished) {}
+            public void onFinish() {
+                refreshListView();
+                startTimerforRefreshListView();
+            }
+        }.start();
     }
 }

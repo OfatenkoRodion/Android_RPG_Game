@@ -6,8 +6,8 @@ import android.os.CountDownTimer;
 public class SpawnerSystem {
 
     static int MAX_MOBS_COUNT=6;
-   private List<NPC> available_mobs;
-    int blockedMobNomber=-1;
+    private List<NPC> available_mobs;
+    private int blockedMobNomber=-1;
 
     public SpawnerSystem(){
         available_mobs= new ArrayList<NPC>();

@@ -45,14 +45,12 @@ public class CharacterGolem extends Character {
         LVL++;
         Next_lvl_experience= Next_lvl_experience+45*LVL;
     }
-
     public static final Parcelable.Creator<Character> CREATOR = new Parcelable.Creator<Character>() {
 
         @Override
         public Character createFromParcel(Parcel source) {
             return new CharacterGolem (source);
         }
-
         @Override
         public Character[] newArray(int size) {
             return new Character[size];

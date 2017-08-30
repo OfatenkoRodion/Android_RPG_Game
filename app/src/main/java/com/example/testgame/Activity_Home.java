@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Activity_Inf extends Activity  {
+public class Activity_Home extends Activity  {
 
     Character player;
 
@@ -25,7 +25,6 @@ public class Activity_Inf extends Activity  {
     @Override
     protected void onRestart() {
         super.onRestart();
-       // info.setText("я вернулся");
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

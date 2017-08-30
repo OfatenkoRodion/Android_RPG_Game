@@ -12,7 +12,7 @@ import android.os.Handler;
 import android.widget.TextView;
 import android.app.Activity;
 
-public class FightActivity extends Activity implements View.OnClickListener{
+public class ActivityFight extends Activity implements View.OnClickListener{
 
     Button bt;
     ProgressBar progressBarPlayer;

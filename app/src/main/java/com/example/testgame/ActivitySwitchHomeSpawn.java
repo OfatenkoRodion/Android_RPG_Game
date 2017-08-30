@@ -24,7 +24,7 @@ public class ActivitySwitchHomeSpawn extends TabActivity {
         tabSpec = tabHost.newTabSpec("tag1");
         tabSpec.setIndicator("Home");
 
-        intent = new Intent(ActivitySwitchHomeSpawn.this, Activity_Inf.class);
+        intent = new Intent(ActivitySwitchHomeSpawn.this, Activity_Home.class);
         intent.putExtra( Character.class.getCanonicalName(), player );
 
         tabSpec.setContent(intent);
