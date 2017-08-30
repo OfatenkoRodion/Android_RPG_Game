@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.app.Activity;
 
-public class Start_screen extends AppCompatActivity implements View.OnClickListener {
+public class Start_screen extends Activity implements View.OnClickListener {
 
     Button newGame;
     Button loadGame;

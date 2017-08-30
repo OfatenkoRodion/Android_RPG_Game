@@ -13,19 +13,23 @@
         android:id="@+id/buttonNewGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Новая игра" />
-
+        android:text="Новая игра"
+        android:textSize="30sp"
+        />
     <Button
         android:id="@+id/buttonLoadGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Продолжить" />
+        android:text="Продолжить"
+        android:textSize="30sp"
+        />
     <Button
         android:id="@+id/buttonExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Выход" />
-
+        android:text="Выход"
+        android:textSize="30sp"
+        />
     <TextView
         android:id="@+id/textViewHelloInfo"
         android:layout_width="match_parent"
@@ -33,5 +37,6 @@
         android:text="2017 by Rodion Ofatenko"
         android:gravity="center"
         android:background="@color/SandyBrown"
+        android:textSize="25sp"
         />
 </LinearLayout>

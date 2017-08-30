@@ -46,7 +46,7 @@ public class SpawnerSystem {
     }
     private void respawnMob(final int mobNomber){//final что бы мы не могли поменять параметр в методе,типо:
                                                 // какие значение до таймера, такие и гарантируем в конце для его onFinish
-        new CountDownTimer(300000, 1000) {
+        new CountDownTimer(12000, 1000) { /*респаун через 12с*/
             public void onTick(long millisUntilFinished) {}
             public void onFinish() {
                 try{

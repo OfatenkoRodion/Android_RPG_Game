@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.testgame.ActivityChooseHero"
-
     >
 
     <TextView
@@ -16,42 +15,42 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="Выберите класс героя"
-        android:textSize="20sp"
+        android:textSize="8sp"
         android:background="@color/SandyBrown"
         />
 
     <Button
         android:id="@+id/vampireButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:text="Вампир"
         android:layout_gravity="center"
-        android:textSize="15sp"
+        android:textSize="4sp"
 
         />
     <Button
         android:id="@+id/golemButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:text="Голем"
         android:layout_gravity="center"
-        android:textSize="15sp"
+        android:textSize="4sp"
         />
+
     <Button
         android:id="@+id/reptilianButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Рептилоид"
+        android:layout_height="24dp"
         android:layout_gravity="center"
-        android:textSize="15sp"
-        />
+        android:text="Рептилоид"
+        android:textSize="4sp" />
 
     <TextView
         android:id="@+id/textViewInfo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Базовые характеристики"
-        android:textSize="20sp"
+        android:textSize="8sp"
         android:gravity="center"
         android:background="@color/SandyBrown"
         />
@@ -71,7 +70,7 @@
                         \nDMG: 7
                         \nAbility: после каждого удара забирает 2HP жерты"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="6sp"
             android:background="@color/Seashell"
             />
 
@@ -85,7 +84,7 @@
                         \nDMG: 13
                         \nAbility: 10% нанести трехкратный урон"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="6sp"
             android:background="@color/Seashell"
             />
 
@@ -99,7 +98,7 @@
                         \nDMG: 8
                         \nAbility: 20% заставить противника ударить самого себя "
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="6sp"
             android:background="@color/Seashell"
             />
     </LinearLayout>

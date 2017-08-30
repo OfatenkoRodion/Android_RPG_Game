@@ -15,7 +15,6 @@
         <clip
             android:clipOrientation="vertical"
             android:gravity="bottom">
-
             <shape >
                 <corners android:radius="5dip" />
                 <stroke
@@ -32,6 +31,4 @@
             </shape>
         </clip>
     </item>
-
-
 </layer-list>

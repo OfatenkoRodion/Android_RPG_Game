@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.content.pm.ActivityInfo;
 import android.view.View;
 import android.widget.Button;
+import android.app.Activity;
 
-public class ActivityChooseHero extends AppCompatActivity implements View.OnClickListener{
+public class ActivityChooseHero extends Activity implements View.OnClickListener{
     Button openVampire;
     Button openGolem;
     Button openReptilian;

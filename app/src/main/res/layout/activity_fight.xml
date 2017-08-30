@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Seashell"
+    android:weightSum="1">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.07">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button" />
+        <ProgressBar
+            android:id="@+id/progressBarOponenHP"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_weight="0.07"
+            android:progressDrawable="@drawable/character_hp_progressbar" />
+
+        <ProgressBar
+            android:id="@+id/progressBarCharHP"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_weight="0.07"
+            android:progressDrawable="@drawable/character_hp_progressbar" />
+
+        <Button
+            android:id="@+id/buttonSt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="59dp"
+            android:text="Начать"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/textViewPlayerHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/buttonSt"
+            android:layout_toStartOf="@+id/buttonSt"
+            android:text="HP"
+            android:textSize="30dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewOponentHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/buttonSt"
+            android:layout_toRightOf="@+id/buttonSt"
+            android:text="HP"
+            android:textSize="30dp"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -13,6 +13,7 @@ public class RandomNPC {
         classes.add(com.example.testgame.NPC_wolf.class.getName());
         classes.add(com.example.testgame.NPC_Orc_Archer.class.getName());
         classes.add(com.example.testgame.NPC_Imp.class.getName());
+        classes.add(com.example.testgame.NPC_Rat.class.getName());
     }
     public Class nextNPC(){
         int classesCount=classes.size();
