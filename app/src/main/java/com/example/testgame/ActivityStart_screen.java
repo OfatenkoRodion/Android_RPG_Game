@@ -26,6 +26,7 @@ public class ActivityStart_screen extends Activity implements View.OnClickListen
         newGame.setOnClickListener(this);
         loadGame.setOnClickListener(this);
         exitGame.setOnClickListener(this);
+
     }
     @Override
     public void  onClick(View view){
@@ -59,7 +60,7 @@ public class ActivityStart_screen extends Activity implements View.OnClickListen
             } else  Toast.makeText(this,"Предидущих игр не найденно!", Toast.LENGTH_SHORT).show();
         } else
         if(view==exitGame){
-            System.exit(0);
+           System.exit(0);
         }
     }
 }

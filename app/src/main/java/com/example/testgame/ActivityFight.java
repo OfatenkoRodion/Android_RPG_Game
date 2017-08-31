@@ -11,6 +11,8 @@ import android.widget.ProgressBar;
 import android.os.Handler;
 import android.widget.TextView;
 import android.app.Activity;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class ActivityFight extends Activity implements View.OnClickListener{
 
@@ -26,7 +28,7 @@ public class ActivityFight extends Activity implements View.OnClickListener{
     Thread outputHP;
     BattleRound br;
     final  int START_CODE=1;
-
+    private Animation mEnlargeAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,8 @@ public class ActivityFight extends Activity implements View.OnClickListener{
 
         bt=(Button)findViewById(R.id.buttonSt);
         bt.setOnClickListener(this);
+
+        mEnlargeAnimation = AnimationUtils.loadAnimation(this, R.anim.enlarge);
 
         h = new Handler() {
             public void handleMessage(android.os.Message msg) {
@@ -89,6 +93,7 @@ public class ActivityFight extends Activity implements View.OnClickListener{
            br = new BattleRound(player,oponent);
            outputHP.start();
            bt.setClickable(false);
+            bt.startAnimation(mEnlargeAnimation);
           }
     }
 }
